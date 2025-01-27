@@ -18,7 +18,7 @@ export const WorkflowTable = ({ workflows }: WorkflowTableProps) => {
         <tr>
           <TableHead className="w-[107px]">Type</TableHead>
           <TableHead className="grow">Name</TableHead>
-          <TableHead className="w-[180px]">Tags</TableHead>
+          <TableHead className="w-[220px]">Tags</TableHead>
           <TableHead className="w-[150px]">Last Updated</TableHead>
           <TableHead className="w-[88px]">Actions</TableHead>
         </tr>
