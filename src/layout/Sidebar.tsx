@@ -13,9 +13,7 @@ export const Sidebar = () => {
       <div className="flex flex-col gap-2">
         <div className="flex flex-row gap-2 items-center">
           <div className="size-9 bg-[#ADABFF] rounded-md"></div>
-          <h3 className="font-semibold text-sm text-primary font-inter">
-            AirOps
-          </h3>
+          <h3 className="font-semibold text-sm">AirOps</h3>
         </div>
         <NewButton />
         <nav>
@@ -28,8 +26,11 @@ export const Sidebar = () => {
                   }}
                   className="w-full flex flex-row gap-2 items-center rounded-md hover:bg-gray-100 p-2"
                 >
-                  <navigationButton.icon className="size-3 items-center justify-center flex" />
-                  <span className="text-[#565656] text-xs font-inter">
+                  <navigationButton.icon
+                    aria-hidden="true"
+                    className="size-3 items-center justify-center flex"
+                  />
+                  <span className="text-[#565656] text-xs font-medium">
                     {navigationButton.text}
                   </span>
                 </button>

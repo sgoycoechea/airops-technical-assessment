@@ -6,7 +6,7 @@ export const Layout = () => {
   return (
     <div className="h-screen overflow-hidden bg-white flex flex-row">
       <Sidebar />
-      <main className="grow overflow-y-auto">
+      <main className="grow overflow-y-auto text-primary font-inter">
         <Outlet />
       </main>
     </div>

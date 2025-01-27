@@ -5,12 +5,12 @@ const airopsInstance = new AirOps();
 const airopsAppID = import.meta.env.VITE_AIROPS_APP_ID;
 const airopsAppVersion = import.meta.env.VITE_AIROPS_APP_VERSION;
 
-interface WorkflowTag {
+export interface WorkflowTag {
   name: string;
   color: string;
 }
 
-interface Workflow {
+export interface Workflow {
   id: number;
   lastUpdated: number;
   name: string;
@@ -23,13 +23,13 @@ interface GetWorkflowsOutput {
   data: Workflow[];
 }
 
-export const getWorkflows = async () => {
+export const getWorkflows = async (count: number) => {
   const response = await airopsInstance.apps.execute({
     appId: airopsAppID,
     version: airopsAppVersion,
     payload: {
       inputs: {
-        count: 3,
+        count,
       },
     },
   });

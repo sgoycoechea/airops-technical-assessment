@@ -24,7 +24,13 @@ export const PlusIcon = (props: SVGProps) => {
         />
       </mask>
       <g mask="url(#mask0_1_34579)">
-        <rect x="0.321533" y="0.523438" width="12" height="12" fill="#09090B" />
+        <rect
+          x="0.321533"
+          y="0.523438"
+          width="12"
+          height="12"
+          fill="currentColor"
+        />
       </g>
     </svg>
   );
