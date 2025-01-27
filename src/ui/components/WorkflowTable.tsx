@@ -10,6 +10,8 @@ interface WorkflowTableProps {
 }
 
 export const WorkflowTable = ({ workflows }: WorkflowTableProps) => {
+  if (workflows.length === 0) return <p className="mt-8">No workflows found</p>;
+
   return (
     <table className="w-full">
       <thead className="border-b h-14">

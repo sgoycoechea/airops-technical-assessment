@@ -1,31 +1,36 @@
 import { useQuery } from "@tanstack/react-query";
+import { useState } from "react";
 import { getWorkflows } from "~/api";
-import { WorkflowTable, Spinner } from "~/ui/components";
+import { WorkflowTable, Spinner, Header } from "~/ui/components";
 
-const TABLE_SIZE = 7;
+const NUM_WORKFLOWS = 7;
 
 export const Workflows = () => {
+  const [search, setSearch] = useState("");
+
   // Another option here, if we don't want to use useQuery, is creating a Custom Hook
-  const { data: workflows } = useQuery({
+  const { data: workflows, isLoading } = useQuery({
     queryKey: ["getWorkflows"],
-    queryFn: () => getWorkflows(TABLE_SIZE),
+    queryFn: () => getWorkflows(NUM_WORKFLOWS),
     staleTime: Infinity,
   });
 
-  const sortedWorkflows = [...(workflows ?? [])].sort(
+  const filteredWorkflows = workflows?.filter((workflow) =>
+    workflow.name.toLowerCase().includes(search.toLowerCase())
+  );
+
+  const sortedWorkflows = [...(filteredWorkflows ?? [])].sort(
     (a, b) => b.lastUpdated - a.lastUpdated
   );
 
   return (
     <>
-      <header className="h-20 border-b border-[#ECEDEF] items-center flex px-5">
-        <h1 className="font-bold text-3xl">Workflows</h1>
-      </header>
+      <Header search={search} setSearch={setSearch} />
       <div className="px-5">
-        {workflows ? (
-          <WorkflowTable workflows={sortedWorkflows} />
-        ) : (
+        {isLoading ? (
           <Spinner />
+        ) : (
+          <WorkflowTable workflows={sortedWorkflows} />
         )}
       </div>
     </>

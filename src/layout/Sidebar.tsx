@@ -1,5 +1,5 @@
-import { NewButton } from "~/ui/components";
-import { ChartIcon, CogIcon, DatabaseIcon } from "~/ui/icons";
+import { Button } from "~/ui/atoms";
+import { ChartIcon, CogIcon, DatabaseIcon, PlusIcon } from "~/ui/icons";
 
 export const Sidebar = () => {
   const navigationButtons = [
@@ -15,7 +15,10 @@ export const Sidebar = () => {
           <div className="size-9 bg-[#ADABFF] rounded-md"></div>
           <h3 className="font-semibold text-sm">AirOps</h3>
         </div>
-        <NewButton />
+        <Button className="shadow-sm">
+          <span>New</span>
+          <PlusIcon aria-hidden="true" />
+        </Button>
         <nav>
           <ul className="flex flex-1 flex-col">
             {navigationButtons.map((navigationButton) => (

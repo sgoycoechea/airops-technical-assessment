@@ -1,13 +1,22 @@
-import { PropsWithChildren } from "react";
+import { ComponentPropsWithoutRef, PropsWithChildren } from "react";
 import { twMerge } from "tailwind-merge";
 
-interface TableHeadProps extends PropsWithChildren {
+interface TableHeadProps
+  extends ComponentPropsWithoutRef<"td">,
+    PropsWithChildren {
   className?: string;
 }
 
-export const TableHead = ({ children, className }: TableHeadProps) => {
+export const TableHead = ({
+  children,
+  className,
+  ...props
+}: TableHeadProps) => {
   return (
-    <th className={twMerge("px-4 text-left text-sm font-bold", className)}>
+    <th
+      className={twMerge("px-4 text-left text-sm font-bold", className)}
+      {...props}
+    >
       {children}
     </th>
   );
