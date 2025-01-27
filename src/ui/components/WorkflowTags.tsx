@@ -11,7 +11,7 @@ export const WorkflowTags = ({ tags }: WorkflowTagsProps) => {
     <button
       type="button"
       className={twMerge(
-        " flex flex-row items-center rounded-2xl border border-[#09090B14] px-2.5 py-[5px] gap-2",
+        "flex flex-row items-center rounded-2xl border border-[#09090B14] px-2.5 py-[5px] gap-2",
         "text-[13px] font-semibold hover:bg-gray-100"
       )}
     >

@@ -8,7 +8,7 @@ const NUM_WORKFLOWS = 7;
 export const Workflows = () => {
   const [search, setSearch] = useState("");
 
-  // Another option here, if we don't want to use useQuery, is creating a Custom Hook
+  // Another option here, if we don't want to use the TanStack Query library, is creating a Custom Hook
   const { data: workflows, isLoading } = useQuery({
     queryKey: ["getWorkflows"],
     queryFn: () => getWorkflows(NUM_WORKFLOWS),

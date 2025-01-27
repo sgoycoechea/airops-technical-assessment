@@ -14,11 +14,11 @@ export const Header = ({ search, setSearch }: HeaderProps) => {
       <div className="flex flex-row gap-2">
         <Button>
           <span>Sort</span>
-          <ArrowDownIcon />
+          <ArrowDownIcon aria-hidden="true" />
         </Button>
         <Input
           placeholder="Search workflows"
-          leftIcon={<MagnifyingGlassIcon />}
+          leftIcon={<MagnifyingGlassIcon aria-hidden="true" />}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />

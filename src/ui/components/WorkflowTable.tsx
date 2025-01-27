@@ -25,7 +25,10 @@ export const WorkflowTable = ({ workflows }: WorkflowTableProps) => {
       </thead>
       <tbody>
         {workflows?.map((workflow) => (
-          <tr key={workflow.id} className="h-16 border-b border-[#09090B14]">
+          <tr
+            key={`workflow-${workflow.id}`}
+            className="h-16 border-b border-[#09090B14]"
+          >
             <TableCell className="capitalize text-[13px] text-[#868686] font-medium">
               {workflow.type}
             </TableCell>
