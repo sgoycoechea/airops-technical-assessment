@@ -25,6 +25,7 @@ export const WorkflowTags = ({ tags }: WorkflowTagsProps) => {
           <div className="flex flex-row gap-1">
             {tags.map((tag) => (
               <div
+                key={`square-colored-${tag.color}`}
                 className="size-2 rounded-sm"
                 style={{ backgroundColor: tag.color }}
               />
