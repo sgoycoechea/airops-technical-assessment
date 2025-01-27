@@ -1,27 +1,43 @@
-export const Sidebar = () => {
+import { NewButton } from "~/ui/components";
+import { ChartIcon, CogIcon, DatabaseIcon } from "~/ui/icons";
 
+export const Sidebar = () => {
   const navigationButtons = [
-    {text: "Data Name", icon: <></>, key: "data-name-link"},
-    {text: "Monitoring", icon: <></>, key: "monitoring-link"},
-    {text: "Settings", icon: <></>, key: "settings-link"}
-  ]
+    { text: "Data Name", icon: DatabaseIcon, key: "data-name-link" },
+    { text: "Monitoring", icon: ChartIcon, key: "monitoring-link" },
+    { text: "Settings", icon: CogIcon, key: "settings-link" },
+  ];
 
   return (
-    <aside className="flex h-full flex-col border-r border-gray-200 bg-white px-6 ring-1 ring-white/5 md:w-72">
-      <nav>
-      <ul className="flex flex-1 flex-col gap-y-7">
-        {navigationButtons.map((navigationButton) => 
-          (<li key={navigationButton.key}>
-            <button
-              onClick={() => { console.log(`Clicked on ${navigationButton.text}`)}}
-              className=""
-            >
-              {navigationButton.text}
-            </button>
-          </li>)
-        )}
-      </ul>
-      </nav>
+    <aside className="flex h-full flex-col border-r border-[#E6E6E6] bg-white p-2 w-60">
+      <div className="flex flex-col gap-2">
+        <div className="flex flex-row gap-2 items-center">
+          <div className="size-9 bg-[#ADABFF] rounded-md"></div>
+          <h3 className="font-semibold text-sm text-primary font-inter">
+            AirOps
+          </h3>
+        </div>
+        <NewButton />
+        <nav>
+          <ul className="flex flex-1 flex-col">
+            {navigationButtons.map((navigationButton) => (
+              <li key={navigationButton.key}>
+                <button
+                  onClick={() => {
+                    console.log(`Clicked on ${navigationButton.text}`);
+                  }}
+                  className="w-full flex flex-row gap-2 items-center rounded-md hover:bg-gray-100 p-2"
+                >
+                  <navigationButton.icon className="size-3 items-center justify-center flex" />
+                  <span className="text-[#565656] text-xs font-inter">
+                    {navigationButton.text}
+                  </span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
     </aside>
   );
 };

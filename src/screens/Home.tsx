@@ -6,6 +6,7 @@ export const Home = () => {
   const { data: workflows } = useQuery({
     queryKey: ["getWorkflows"],
     queryFn: getWorkflows,
+    staleTime: Infinity,
   });
 
   return (
