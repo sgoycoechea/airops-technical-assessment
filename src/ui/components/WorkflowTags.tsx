@@ -31,7 +31,7 @@ export const WorkflowTags = ({ tags }: WorkflowTagsProps) => {
               />
             ))}
           </div>
-          <span className="capitalize">
+          <span className="capitalize overflow-hidden whitespace-nowrap text-ellipsis max-w-24">
             {tags.length === 1 ? tags[0].name : `${tags.length} tags`}
           </span>
         </>
