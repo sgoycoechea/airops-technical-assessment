@@ -1,8 +1,11 @@
+import { StrictMode } from "react"
+import { Router } from "./router"
+
 function App() {
   return (
-    <div className="text-lg">
-      Technical assessment
-    </div>
+    <StrictMode>
+      <Router />
+    </StrictMode>
   )
 }
 
