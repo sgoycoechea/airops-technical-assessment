@@ -44,14 +44,14 @@ export const WorkflowTable = ({ workflows }: WorkflowTableProps) => {
             <TableCell>
               <div className="flex flex-row items-center gap-2">
                 <WorkflowActionButton
-                  name="Edit workflow"
-                  ariaLabel="Edit workflow"
+                  name={`Edit workflow ${workflow.name}`}
+                  ariaLabel={`Edit workflow ${workflow.name}`}
                 >
                   <PencilIcon />
                 </WorkflowActionButton>
                 <WorkflowActionButton
-                  name="Delete workflow"
-                  ariaLabel="Delete workflow"
+                  name={`Delete workflow ${workflow.name}`}
+                  ariaLabel={`Delete workflow ${workflow.name}`}
                 >
                   <TrashIcon />
                 </WorkflowActionButton>
