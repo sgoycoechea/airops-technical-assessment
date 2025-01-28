@@ -8,7 +8,7 @@ export interface InputProps extends ComponentPropsWithoutRef<"input"> {
 export const Input = ({ leftIcon, ...props }: InputProps) => {
   return (
     <div className="relative flex flex-row items-center gap-2">
-      <div className="pointer-events-none absolute left-3"> {leftIcon}</div>
+      <div className="pointer-events-none absolute left-3">{leftIcon}</div>
 
       <input
         type="text"

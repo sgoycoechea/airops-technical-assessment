@@ -2,7 +2,7 @@ import { ComponentPropsWithoutRef, PropsWithChildren } from "react";
 import { twMerge } from "tailwind-merge";
 
 interface TableHeadProps
-  extends ComponentPropsWithoutRef<"td">,
+  extends ComponentPropsWithoutRef<"th">,
     PropsWithChildren {
   className?: string;
 }
